@@ -7,17 +7,17 @@
 
 body{
   background-color: #09090A;
-  width: 1200px;
-  margin: auto;;
- 
+  height: 100vh;
 }
 
 header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  position: fixed;
+  width: 100%;
   padding: 48px;
+  background-color: #09090A;
 }
 
 button {
@@ -37,11 +37,13 @@ button {
   font-size: 16px;
   line-height: 125%;
 }
-form{
+
+#form-habits{
   display: flex;
 
-  padding: 0 48px;
-  color: #fff;
+  padding: 182px 48px 48px;
+  
+  width: fit-content;
 }
 
 .habits{
@@ -99,4 +101,10 @@ input{
 input:checked{
   background: #8B5CF6;
   border: 2px solid #A78BFA;
+}
+
+@media (max-width: 570px) {
+  .text-button {
+    display: none;
+  }
 }
