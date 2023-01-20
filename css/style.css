@@ -18,6 +18,8 @@ header{
   width: 100%;
   padding: 48px;
   background-color: #09090A;
+  border-bottom: 1px solid #fff;
+ 
 }
 
 button {
@@ -27,7 +29,7 @@ button {
   background-color: transparent;
   color: #fff;
  
-
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -37,6 +39,12 @@ button {
   font-size: 16px;
   line-height: 125%;
 }
+
+button:hover{
+  background-color: #4C1D95;
+}
+
+
 
 #form-habits{
   display: flex;
@@ -59,7 +67,7 @@ button {
   width: 64px;
   height: 64px;
   font-size: 32px;
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +76,8 @@ button {
 .days{
   display: flex;
   margin-left: 32px;
-  gap: 48px;
+
+  gap:48px;
 }
 
 .day{

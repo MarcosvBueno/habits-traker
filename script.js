@@ -1,11 +1,33 @@
- const form = document.querySelector('#form-habits');
- const nlwSetup = new NLWSetup(form);
+const form = document.querySelector('#form-habits');
+const nlwSetup = new NLWSetup(form);
+const button = document.querySelector('header button');
 
- const data = {
-  run: ['01-01', '01-02', '01-03','01-06','01-07'],
-  study: ['01-03'],
-  takepills:['01-02']
- }
+button.addEventListener('click', add);
+form.addEventListener('change', save);
 
- nlwSetup.setData(data);
- nlwSetup.load();
+function add() {
+  const today = new Date().toLocaleDateString('pt-br').slice(0,5);
+  console.log(today);
+  const dayExists = nlwSetup.dayExists(today);
+
+  if (true === dayExists) {
+    alert('dia já incluso');
+    return
+  }
+  nlwSetup.addDay(today);
+}
+
+function save() {
+ window.localStorage.setItem('criando@osave', JSON.stringify(nlwSetup.data));
+
+
+}
+
+const data = JSON.parse(localStorage.getItem('criando@osave')) || {};
+
+nlwSetup.setData(data);
+nlwSetup.load();
+
+
+
+
